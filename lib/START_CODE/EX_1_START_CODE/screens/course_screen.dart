@@ -33,7 +33,7 @@ class CourseScreen extends StatelessWidget {
     Course? course = Provider.of<CoursesProvider>(
       context,
       listen: true,
-    ).getCourse(courseId);
+    ).getCourseFor(courseId);
 
     Widget content = const Center(child: Text('No Scores added yet.'));
     if (course != null) {

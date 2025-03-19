@@ -16,12 +16,12 @@ class CoursesProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  Course? getCourse(String courseId) {
+  Course? getCourseFor(String courseId) {
     return _courses.firstWhere((c) => c.name == courseId);
   }
 
   void addScore(String courseId, CourseScore score) {
-    Course? course = getCourse(courseId);
+    Course? course = getCourseFor(courseId);
     if (course != null) {
       coursesRepository.addScore(course, score);
       notifyListeners();
